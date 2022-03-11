@@ -1,4 +1,4 @@
-let phrase = "kochajmy się jak bracia liczmy się jak Żydzi";
+let phrase = "avon polska";
 phrase = phrase.toUpperCase();
 
 let length = phrase.length;
