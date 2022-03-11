@@ -1,4 +1,4 @@
-let phrase = "Co ma wisieć nie utonie";
+let phrase = "kochajmy się jak bracia liczmy się jak Żydzi";
 phrase = phrase.toUpperCase();
 
 let length = phrase.length;
