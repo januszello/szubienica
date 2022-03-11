@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: #000;
+    color: #ccc;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Inconsolata', monospace;
+    font-size: 2rem;
+}
+
+.wrapper {
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+    margin: 5rem 0;
+    gap: 2rem;
+}
+
+.board {
+    width: 100%;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 5px;
+    /* background-color: aquamarine; */
+}
+
+.hangman {
+    align-self: center;
+    flex-basis: calc(50% - 2rem);
+    /* background-color: aliceblue; */
+}
+
+.hangman img {
+    width: 100%;
+    min-width: 450px;
+    min-height: 280px;
+}
+
+
+.alphabet {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5vw;
+    justify-content: space-between;
+    /* background-color: yellow; */
+    flex-basis: 50%;
+    min-height: 280px;
+}
+
+
+.char {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5vw;
+    height: 5vw;
+    border: 3px solid #aaa;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.char:hover {
+    background-color: #222;
+    border-color: "#ccc";
+    color: #fff;
+}
+
+
+.alphabet > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+}
+
+.win-result {
+    color: #00C000;
+    font-size: 3rem;
+}
+
+.lose {
+    color: #f00;
+}
+
+.reset {
+    cursor: pointer;
+}
+
+.reset:hover {
+    color: #fff;
+}
+
+
+    @media (max-width: 415px) {
+        body {
+            font-size: 1.5rem;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+        }
+    
+        .board {
+            width: 100%;
+            padding: 1.5rem 0;
+            text-align: center;
+            font-size: 2rem;
+            letter-spacing: 5px;
+            /* background-color: aquamarine; */
+        }
+    
+        .hangman {
+            justify-self: center;
+            /* background-color: aliceblue; */
+        }
+        
+        .hangman img {
+            width: 50%;
+            min-width: 225px;
+            min-height: 140px;
+        }
+    
+        .alphabet {
+            display: flex;
+            gap: .5vw;
+            justify-content: space-between;
+            /* background-color: yellow; */
+            flex-basis: 100%;
+            min-height: 280px;
+        }
+    
+        .char {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 10vw;
+            height: 10vw;
+            border: 3px solid #aaa;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .alphabet > div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: space-around;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        body {
+            font-size: 1.5rem;
+            height: 100vh;
+        }
+        
+        .wrapper {
+            display: flex;
+            justify-content: center;
+        }
+    
+        .board {
+            width: 100%;
+            padding: 1.5rem 0;
+            text-align: center;
+            font-size: 3rem;
+            letter-spacing: 5px;
+            /* background-color: aquamarine; */
+        }
+    
+        .hangman {
+            justify-self: center;
+            /* background-color: aliceblue; */
+        }
+        
+        .hangman img {
+            width: 100%;
+            min-width: 450px;
+            min-height: 280px;
+        }
+    
+        .alphabet {
+            display: flex;
+            gap: .5vw;
+            justify-content: space-between;
+            /* background-color: yellow; */
+            flex-basis: 100%;
+            min-height: 280px;
+        }
+    
+        .char {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 10vw;
+            height: 10vw;
+            border: 3px solid #aaa;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .alphabet > div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: space-around;
+        }
+    }
+
+    @media (max-width: 1205px) and (orientation: landscape) {
+        body {
+            font-size: 1.5rem;
+            height: 100vh;
+        }
+        
+        .wrapper {
+            display: flex;
+            justify-content: center;
+        }
+    
+        .board {
+            width: 100%;
+            padding: 1.5rem 0;
+            text-align: center;
+            font-size: 3rem;
+            letter-spacing: 5px;
+            /* background-color: aquamarine; */
+        }
+    
+        .hangman {
+            justify-self: center;
+            flex-basis: 40%;
+            /* background-color: aliceblue; */
+        }
+        
+        .hangman img {
+            width: 100%;
+            min-width: 450px;
+            min-height: 280px;
+        }
+    
+        .alphabet {
+            display: flex;
+            gap: .5vw;
+            justify-content: space-between;
+            /* background-color: yellow; */
+            flex-basis: 82%;
+            min-height: 280px;
+        }
+    
+        .char {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5vw;
+            height: 5vw;
+            border: 3px solid #aaa;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .alphabet > div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: space-around;
+        }
+    }
+    
