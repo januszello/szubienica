@@ -1,15 +1,21 @@
-let phrase = "avon polska";
+const phrases = ["baba z wozu koniom lżej", "nie taki diabeł straszny jak go malują", "mowa jest srebrem a milczenie złotem", "Co ma wisieć nie utonie", "mądry przyjmie radę głupi nią wzgardzi", "kochajmy się jak bracia liczmy się jak Żydzi", "Bhutan", "Thimphu", "Burundi", "Gitega", "Gruzja", "Tbilisi", "Kambodża", "Phnom Penh", "Korea Północna", "Pjongjang", "czerwony", "niebieski", "eucharystia", "zielony", "Russian warship go fuck yourself", "Nowy Jork", "Warszawa", "Kijów", "Krzysztof Kolumb", "Mikołaj Kopernik", "Bolesław Wiktor Wicherkiewicz", "taksonomia blooma", "Franklin Delano Roosevelt", "Londyn", "Koziołki z Poznania", "Poznań miasto doznań", "instagram", "wielki post", "pascha", "Bill Gates", "Steve Jobs", "Ludovico Einaudi", "Bez pracy nie ma kołaczy", "Fortuna kołem się toczy", "Nie chwal dnia przed zachodem słońca", "Apetyt rośnie w miarę jedzenia", "Nie odnajdziesz spokoju unikając życia", "Najcenniejszych rzeczy w życiu nie nabywa się za pieniądze", "Albert Einstein", "Winston Churchill", "To co nas nie zabije uczyni nas silniejszymi", "Friedrich Nietzsche"];
+
+let phrase = phrases[Math.floor(Math.random() * phrases.length)];
+
+
 phrase = phrase.toUpperCase();
 
-let length = phrase.length;
+let phraseLength = phrase.length;
 let mistakeNumb = 0;
 
 var yes = new Audio("yes.wav");
 var no = new Audio("no.wav");
+const win = new Audio("win.wav");
+const lose = new Audio("lose.wav");
 
 let phrase1 = "";
 
-for (i=0; i<length; i++)
+for (i = 0; i < phraseLength; i++)
 {
     if(phrase.charAt(i)==" ") phrase1 = phrase1 + " ";
     else phrase1 = phrase1 + "_";
@@ -56,12 +62,13 @@ characters[29] = "W";
 characters[30] = "X";
 characters[31] = "Y";
 characters[32] = "Z";
-characters[33] = "Ż";
-characters[34] = "Ź";
+characters[33] = "Ź";
+characters[34] = "Ż";
 
 function start() 
 {
     let divContent = "";
+
 
     for(i=0; i<=34; i++)
     {
@@ -77,15 +84,14 @@ function start()
 String.prototype.setTheMark = function(place, sign)
 {
     if(place > this.length - 1) return this.toString();
-    else return this.substr(0, place) + sign + this.substr(place+1)
+    else return this.substr(0, place) + sign + this.substr(place+1);
 }
 
 function check(numb)
 {
-
     let hit = false;
 
-    for(i=0; i<length; i++)
+    for(i = 0; i < phraseLength; i++)
     {
         if(phrase.charAt(i) == characters[numb])
         {
@@ -127,11 +133,26 @@ function check(numb)
     }
 
     // win
-    if(phrase == phrase1)
-    document.querySelector('.alphabet').innerHTML = '<div class="">Tak jest! Podano prawidłowe hasło: <br/> <span class="win-result">' + phrase + '</span><br /><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span></div>';
+    
+    function win() {
+        
+        document.querySelector('.alphabet').innerHTML = '<div class="end-win">Tak jest!<br> Podano prawidłowe hasło!<span class="reset" onclick="location.reload()">JESZCZE RAZ?</span></div>';
+        document.querySelector('.board').classList.add('win-result');
+        
+        win.play();
+    }
+    
+    if(phrase == phrase1) win();
     
     // lose
-    if(mistakeNumb >= 9)
-    document.querySelector('.alphabet').innerHTML = '<div><span class="lose">HANGMAN! Przegrana...</span><br /><span class="reset" onclick="location.reload()">SPRÓBUJESZ JESZCZE RAZ?</span></div>';
+    
+    function lose() {
+        document.querySelector('.alphabet').innerHTML = '<div class="end-lose"><span class="lose">HANGMAN! Przegrana...</span><br /><span class="reset" onclick="location.reload()">SPRÓBUJESZ JESZCZE RAZ?</span></div>';
+
+        lose.play();
+    }
+    
+    if(mistakeNumb >= 9) lose();
+    
 
 }
