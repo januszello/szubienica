@@ -10,8 +10,8 @@ let mistakeNumb = 0;
 
 var yes = new Audio("yes.wav");
 var no = new Audio("no.wav");
-const win = new Audio("win.wav");
-const lose = new Audio("lose.wav");
+const winGame = new Audio("win.wav");
+const loseGame = new Audio("lose.wav");
 
 let phrase1 = "";
 
@@ -138,8 +138,8 @@ function check(numb)
         
         document.querySelector('.alphabet').innerHTML = '<div class="end-win">Tak jest!<br> Podano prawidłowe hasło!<span class="reset" onclick="location.reload()">JESZCZE RAZ?</span></div>';
         document.querySelector('.board').classList.add('win-result');
-        
-        win.play();
+
+        winGame.play();
     }
     
     if(phrase == phrase1) win();
@@ -149,7 +149,7 @@ function check(numb)
     function lose() {
         document.querySelector('.alphabet').innerHTML = '<div class="end-lose"><span class="lose">HANGMAN! Przegrana...</span><br /><span class="reset" onclick="location.reload()">SPRÓBUJESZ JESZCZE RAZ?</span></div>';
 
-        lose.play();
+        loseGame.play();
     }
     
     if(mistakeNumb >= 9) lose();

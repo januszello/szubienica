@@ -80,7 +80,7 @@ body {
 }
 
 .end-win span:first-of-type,
-.end-lose span:fist-of-type {
+.end-lose span:first-of-type {
     text-align: center;
     width: 100%;
 }
