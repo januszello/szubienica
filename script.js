@@ -105,9 +105,10 @@ function check(numb)
         yes.play();
         let element = "element" + numb;
         
-        document.getElementById(element).style.backgroundColor = "#030";
+        document.getElementById(element).style.backgroundColor = "#C7FFC7";
         document.getElementById(element).style.color = "#00C000";
         document.getElementById(element).style.border = "3px solid #00C000";
+        document.getElementById(element).style.boxShadow = "0 3px 0 #00C000";
         document.getElementById(element).style.cursor = "default";
 
         writePhrase();
@@ -117,9 +118,10 @@ function check(numb)
         no.play();
         let element = "element" + numb;
 
-        document.getElementById(element).style.backgroundColor = "#300";
+        document.getElementById(element).style.backgroundColor = "#FFBBBB";
         document.getElementById(element).style.color = "#C00000";
-        document.getElementById(element).style.border = "3px solid #C00000";
+        document.getElementById(element).style.border = "2px solid #C00000";
+        document.getElementById(element).style.boxShadow = "0 3px 0 #C00000";
         document.getElementById(element).style.cursor = "default";
         
         document.getElementById(element).setAttribute("onclick", ";");
@@ -127,7 +129,7 @@ function check(numb)
 
         //mistake
         mistakeNumb++;
-        let picture = "img/s" + mistakeNumb + ".jpg";
+        let picture = "img/s" + mistakeNumb + ".png";
         document.querySelector('.hangman').innerHTML = '<img src="' + picture + '" alt="" />';
 
     }
@@ -136,7 +138,11 @@ function check(numb)
     
     function win() {
         
+<<<<<<< HEAD
+        document.querySelector('.alphabet').innerHTML = '<div class="end-win"><span class="win-txt">GRATULACJE!</span><br />świetna robota<span class="reset" onclick="location.reload()"><i class="fa-solid fa-arrow-rotate-left"></i> ZAGRAJ PONOWNIE</span></div>';
+=======
         document.querySelector('.alphabet').innerHTML = '<div class="end-win">Tak jest!<br> Podano prawidłowe hasło!<span class="reset" onclick="location.reload()">JESZCZE RAZ?</span></div>';
+>>>>>>> 320ec415cd9c7f0ed4a089eaa6ccb5a7a68e0d5b
         document.querySelector('.board').classList.add('win-result');
 
         winGame.play();
@@ -147,7 +153,11 @@ function check(numb)
     // lose
     
     function lose() {
+<<<<<<< HEAD
+        document.querySelector('.alphabet').innerHTML = '<div class="end-lose"><span class="lose">HANGMAN!</span><br>nie tym razem<br><br><span class="reset" onclick="location.reload()"><i class="fa-solid fa-arrow-rotate-left"></i> SPRÓBUJ PONOWNIE</span></div>';
+=======
         document.querySelector('.alphabet').innerHTML = '<div class="end-lose"><span class="lose">HANGMAN! Przegrana...</span><br /><span class="reset" onclick="location.reload()">SPRÓBUJESZ JESZCZE RAZ?</span></div>';
+>>>>>>> 320ec415cd9c7f0ed4a089eaa6ccb5a7a68e0d5b
 
         loseGame.play();
     }
