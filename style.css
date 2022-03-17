@@ -50,6 +50,7 @@ body {
 
 .hangman {
     margin: 0 auto;
+    text-align: center;
     /* flex-basis: 100%; */
     /* background-color: aliceblue; */
 }
@@ -270,12 +271,13 @@ body {
     }
 
     .hangman img {
-        min-height: 715px;
-        min-width: 715px;
-        width: 80%;
+        min-height: 615px;
+        min-width: 615px;
+        width: 60%;
     }
 
     .alphabet {
+        max-height: 60%;
         flex-basis: calc(50% - 4rem);
         margin-right: 4rem;
     }

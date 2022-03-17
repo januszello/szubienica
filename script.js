@@ -138,11 +138,7 @@ function check(numb)
     
     function win() {
         
-<<<<<<< HEAD
         document.querySelector('.alphabet').innerHTML = '<div class="end-win"><span class="win-txt">GRATULACJE!</span><br />świetna robota<span class="reset" onclick="location.reload()"><i class="fa-solid fa-arrow-rotate-left"></i> ZAGRAJ PONOWNIE</span></div>';
-=======
-        document.querySelector('.alphabet').innerHTML = '<div class="end-win">Tak jest!<br> Podano prawidłowe hasło!<span class="reset" onclick="location.reload()">JESZCZE RAZ?</span></div>';
->>>>>>> 320ec415cd9c7f0ed4a089eaa6ccb5a7a68e0d5b
         document.querySelector('.board').classList.add('win-result');
 
         winGame.play();
@@ -153,11 +149,7 @@ function check(numb)
     // lose
     
     function lose() {
-<<<<<<< HEAD
         document.querySelector('.alphabet').innerHTML = '<div class="end-lose"><span class="lose">HANGMAN!</span><br>nie tym razem<br><br><span class="reset" onclick="location.reload()"><i class="fa-solid fa-arrow-rotate-left"></i> SPRÓBUJ PONOWNIE</span></div>';
-=======
-        document.querySelector('.alphabet').innerHTML = '<div class="end-lose"><span class="lose">HANGMAN! Przegrana...</span><br /><span class="reset" onclick="location.reload()">SPRÓBUJESZ JESZCZE RAZ?</span></div>';
->>>>>>> 320ec415cd9c7f0ed4a089eaa6ccb5a7a68e0d5b
 
         loseGame.play();
     }
