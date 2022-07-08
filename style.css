@@ -101,8 +101,9 @@ body {
 
 .end-win span,
 .end-lose span {
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
     /* width: 100%; */
     margin-top: 1rem;
 }
@@ -179,9 +180,15 @@ body {
 }
 
 @media (min-width: 414px) and (min-height: 736px) and (orientation: portrait) {
+
     .hangman img {
         min-height: 332px;
         width: 80vw;
+    }
+
+    .char {
+        width: calc((100vw - 2rem) / 11.5 - 7px);
+        height: calc((100vw - 2rem) / 7 - 7px);
     }
 }
 

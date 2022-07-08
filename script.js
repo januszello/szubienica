@@ -1,6 +1,55 @@
-const phrases = ["baba z wozu koniom lżej", "nie taki diabeł straszny jak go malują", "mowa jest srebrem a milczenie złotem", "Co ma wisieć nie utonie", "mądry przyjmie radę głupi nią wzgardzi", "kochajmy się jak bracia liczmy się jak Żydzi", "Bhutan", "Thimphu", "Burundi", "Gitega", "Gruzja", "Tbilisi", "Kambodża", "Phnom Penh", "Korea Północna", "Pjongjang", "czerwony", "niebieski", "eucharystia", "zielony", "Russian warship go fuck yourself", "Nowy Jork", "Warszawa", "Kijów", "Krzysztof Kolumb", "Mikołaj Kopernik", "Bolesław Wiktor Wicherkiewicz", "taksonomia blooma", "Franklin Delano Roosevelt", "Londyn", "Koziołki z Poznania", "Poznań miasto doznań", "instagram", "wielki post", "pascha", "Bill Gates", "Steve Jobs", "Ludovico Einaudi", "Bez pracy nie ma kołaczy", "Fortuna kołem się toczy", "Nie chwal dnia przed zachodem słońca", "Apetyt rośnie w miarę jedzenia", "Nie odnajdziesz spokoju unikając życia", "Najcenniejszych rzeczy w życiu nie nabywa się za pieniądze", "Albert Einstein", "Winston Churchill", "To co nas nie zabije uczyni nas silniejszymi", "Friedrich Nietzsche"];
+'use strict'
 
-let phrase = phrases[Math.floor(Math.random() * phrases.length)];
+let categoryBox = document.querySelector('.category');
+console.log(categoryBox);
+const categoryBank = ["capitalCity", "proverb", "knownIndividuals", "marvelHero"];
+
+const capitalCity = ["Londyn", "Warszawa", "Berlin", "Tokio", "Buenos Aires", "Canberra", "Paryż", "Rzym", "Budapeszt", "Madryt", "Waszyngton"];
+const proverb = [
+    "baba z wozu koniom lżej", 
+    "nie taki diabeł straszny jak go malują", 
+    "Co ma wisieć nie utonie",
+    "Niedaleko pada jabłko od jabłoni",
+    "Pierwsze koty za płoty",
+    "Zapomniał wół jak cielęciem był",
+    "Nie odnajdziesz spokoju unikając życia", "Najcenniejszych rzeczy w życiu nie nabywa się za pieniądze",
+    "mądry przyjmie radę głupi nią wzgardzi", "kochajmy się jak bracia liczmy się jak Żydzi", "Nie chwal dnia przed zachodem słońca",
+    "Apetyt rośnie w miarę jedzenia",];
+const knownIndividuals = ["Friedrich Nietzsche", "Krzysztof Kolumb", "Albert Einstein", "Bill Gates", "Steve Jobs", "Ludovico Einaudi", "Mikołaj Kopernik", "Bolesław Wiktor Wicherkiewicz", "Franklin Delano Roosevelt", "Barack Obama", "Sergey Brin", "Larry Page", "Jeff Bezos", "Robert Lewandowski", "Oprah Winfrey", "Alan Rickman", "Heath Ledger", "Johnny Depp", "Jennifer Aniston", "Krystyna Feldman", "Emma Stone", "Christopher Nolan", "Frank Darabont", "Mel Gibson"];
+const marvelHero = ["Iron Man", "Thor", "Spider Man", "Kapitan Ameryka", "Stan Lee", "Doktor Strange", "Czarna Wdowa", "Venom", "Groot", "Zimowy Żołnierz", "Rocket", "Hulk", "Star-Lord", "Nick Fury", "Kapitan marvel"];
+
+let phrase = '';
+let category = '';
+
+function phraseDraw () {
+    let categoryDraw = Math.floor(Math.random() * categoryBank.length);
+    
+    
+    console.log(categoryDraw);
+
+    if (categoryDraw == 0) {
+        phrase = capitalCity[Math.floor(Math.random() * capitalCity.length)];
+        category = 'Stolica Państwa';
+    }
+    else if (categoryDraw == 1) {
+        phrase = proverb[Math.floor(Math.random() * proverb.length)];
+        category = 'Przysłowie';
+    }
+    else if (categoryDraw == 2){
+        phrase = knownIndividuals[Math.floor(Math.random() * knownIndividuals.length)];
+        category = 'Znana osoba';
+    }
+    else {
+        phrase = marvelHero[Math.floor(Math.random() * marvelHero.length)];
+        category = 'Bohater Filmów Marvela';
+    }
+
+    categoryBox.innerHTML = category;
+    console.log(category);// <- write in category HTML box
+    
+}
+
+phraseDraw();
 
 
 phrase = phrase.toUpperCase();
@@ -8,14 +57,16 @@ phrase = phrase.toUpperCase();
 let phraseLength = phrase.length;
 let mistakeNumb = 0;
 
-var yes = new Audio("yes.wav");
-var no = new Audio("no.wav");
+console.log(phraseLength);
+
+const yes = new Audio("yes.wav");
+const no = new Audio("no.wav");
 const winGame = new Audio("win.wav");
 const loseGame = new Audio("lose.wav");
 
 let phrase1 = "";
 
-for (i = 0; i < phraseLength; i++)
+for (let i = 0; i < phraseLength; i++)
 {
     if(phrase.charAt(i)==" ") phrase1 = phrase1 + " ";
     else phrase1 = phrase1 + "_";
@@ -27,50 +78,14 @@ function writePhrase() {
 
 window.onload = start;
 
-var characters = new Array(35);
-
-characters[0] = "A";
-characters[1] = "Ą";
-characters[2] = "B";
-characters[3] = "C";
-characters[4] = "Ć";
-characters[5] = "D";
-characters[6] = "E";
-characters[7] = "Ę";
-characters[8] = "F";
-characters[9] = "G";
-characters[10] = "H";
-characters[11] = "I";
-characters[12] = "J";
-characters[13] = "K";
-characters[14] = "L";
-characters[15] = "Ł";
-characters[16] = "M";
-characters[17] = "N";
-characters[18] = "Ń";
-characters[19] = "O";
-characters[20] = "Ó";
-characters[21] = "P";
-characters[22] = "Q";
-characters[23] = "R";
-characters[24] = "S";
-characters[25] = "Ś";
-characters[26] = "T";
-characters[27] = "U";
-characters[28] = "V";
-characters[29] = "W";
-characters[30] = "X";
-characters[31] = "Y";
-characters[32] = "Z";
-characters[33] = "Ź";
-characters[34] = "Ż";
+const characters = ['A','Ą','B','C','Ć','D','E','Ę','F','G','H','I','J','K','L','Ł','M','N','Ń','O','Ó','P','Q','R','S','Ś','T','U','V','W','X','Y','Z','Ź','Ż'];
 
 function start() 
 {
     let divContent = "";
 
 
-    for(i=0; i<=34; i++)
+    for(let i=0; i<=34; i++)
     {
         let element = "element" + i;
         divContent = divContent + '<div class="char" onclick="check(' + i + ')" id="' + element + '">' + characters[i] + '</div>';
@@ -91,7 +106,7 @@ function check(numb)
 {
     let hit = false;
 
-    for(i = 0; i < phraseLength; i++)
+    for(let i = 0; i < phraseLength; i++)
     {
         if(phrase.charAt(i) == characters[numb])
         {
