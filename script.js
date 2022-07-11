@@ -153,7 +153,7 @@ function check(numb)
     
     function win() {
         
-        document.querySelector('.alphabet').innerHTML = '<div class="end-win"><span class="win-txt">GRATULACJE!</span><br />świetna robota<span class="reset" onclick="location.reload()"><i class="fa-solid fa-arrow-rotate-left"></i> ZAGRAJ PONOWNIE</span></div>';
+        document.querySelector('.alphabet').innerHTML = '<div class="end-win"><span class="win-txt">GRATULACJE!</span><br><span>świetna robota</span><span class="reset" onclick="location.reload()"><i class="fa-solid fa-arrow-rotate-left"></i> ZAGRAJ PONOWNIE</span></div>';
         document.querySelector('.board').classList.add('win-result');
 
         winGame.play();
@@ -164,12 +164,11 @@ function check(numb)
     // lose
     
     function lose() {
-        document.querySelector('.alphabet').innerHTML = '<div class="end-lose"><span class="lose">HANGMAN!</span><br>nie tym razem<br><br><span class="reset" onclick="location.reload()"><i class="fa-solid fa-arrow-rotate-left"></i> SPRÓBUJ PONOWNIE</span></div>';
+        document.querySelector('.alphabet').innerHTML = '<div class="end-lose"><span class="lose">HANGMAN!</span><br><span>nie tym razem</span><br><br><span class="reset" onclick="location.reload()"><i class="fa-solid fa-arrow-rotate-left"></i> SPRÓBUJ PONOWNIE</span></div>';
 
         loseGame.play();
     }
     
     if(mistakeNumb >= 9) lose();
     
-
 }

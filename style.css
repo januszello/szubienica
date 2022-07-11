@@ -1,58 +1,60 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    /* height: 100vh; */
     color: #707070;
     font-family: 'Righteous', cursive;
     /* font-family: Arial, Helvetica, sans-serif; */
-    font-size: 1.5rem;
+    font-size: 1rem;
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
 }
 
 .wrapper {
-    align-content: center;
+    align-content: space-around;
     display: flex;
     flex-wrap: wrap;
-    align-content: space-around;
-    height: 95vh;
-    margin: 1rem 0 0;
+    height: 100%;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
 }
 
 .info-container {
-    margin: 0 5vw;
+    left: 1rem;
+    position: relative;
+    top: 1rem;
 }
 
 .category {
-    padding: .2rem 1rem;
     background-color: #FFB156;
     border: 2px solid #F1901F;
     border-radius: 5px;
     box-shadow: 0 3px 0 #F1901F;
     color: #fff;
     font-size: .8rem;
+    padding: .2rem 1rem;
 }
 
 .board {
-    width: 100%;
-    text-align: center;
+    font-family: 'Inconsolata', monospace;
     font-size: 1.5rem;
     letter-spacing: 5px;
+    margin: 2rem 10px 0;
+    text-align: center;
     transition: .5s;
-    margin: 1rem 10px 0;
-    font-family: 'Inconsolata', monospace;
-    /* background-color: aquamarine; */
-}
+    width: 100%;
+} 
 
 .hangman {
+    flex-basis: 100%;
     margin: 0 auto;
     text-align: center;
-    /* flex-basis: 100%; */
-    /* background-color: aliceblue; */
 }
 
 .hangman img {
@@ -63,92 +65,77 @@ body {
 
 .alphabet {
     display: flex;
-    flex-wrap: wrap;
-    /* gap: 5px; */
-    justify-content: space-between;
-    /* background-color: yellow; */
     flex-basis: 100%;
-    gap: 7px;
-    margin: 0 10px;
-}
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 10px;   
+    bottom: 1rem;
+ } 
 
 
 .char {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    width: calc((100vw - 2rem) / 7 - 7px);
-    height: calc((100vw - 2rem) / 7 - 7px);
     background-color: #fff;
     border: 2px solid #707070;
-    box-shadow: 0 3px 0 #707070;
     border-radius: 10px;
+    box-shadow: 0 3px 0 #707070;
     cursor: pointer;
-}
-
-.alphabet div {
     display: flex;
-    flex-wrap: wrap;
+    height: calc((100vw - 2rem) / 7 - 7px);
     justify-content: center;
-    align-content: space-around;
+    width: calc((100vw - 2rem) / 11.5 - 7px);
 }
 
 .end-win,
 .end-lose {
-    width: 100%;
     height: 100%;
+    width: 100%;
 }
 
 .end-win span,
 .end-lose span {
-    text-align: center;
     display: block;
     margin: 0 auto;
-    /* width: 100%; */
     margin-top: 1rem;
+    text-align: center;
 }
 
 .reset {
-    padding: .8rem 1rem;
     border-radius: 15px;
     color: #fff;
     cursor: pointer;
-}
-
-.fa-arrow-rotate-left {
-    margin-right: 15px;
+    padding: .8rem 1rem;
 }
 
 .end-win .reset {
-    margin-top: 2rem;
     background-color: #74E074;
     border: 3px solid #00C000;
     box-shadow: 0 3px 0 #00C000;
+    margin-top: 2rem;
 }
 
 .end-lose .reset {
-    margin-top: 2rem;
     background-color: #FF4242;
     border: 3px solid #C00000;
     box-shadow: 0 3px 0 #C00000;
+    margin-top: 2rem;
 }
 
 .win-result {
-    width: 100%;
-    color: #00C000;
     animation: scaleEffect 1s 1;
-    /* font-size: 2rem; */
+    color: #00C000;
 }
 
 .end-win .win-txt {
-    width: 100%;
     color: #00C000;
-    text-align: center;
+    font-size: 1.5rem;
 }
 
 .end-lose .lose {
-    width: 100%;
     color: #C00000;
+    font-size: 1.5rem;
 }
 
 
@@ -166,141 +153,51 @@ body {
     }
 }
 
-
-@media (min-width: 390px) {
-    .hangman img {
-        min-height: 380px;
-        width: 100vw;
-    }
-
-    .alphabet {
-        row-gap: 10px;
-    }
-    
-}
-
-@media (min-width: 414px) and (min-height: 736px) and (orientation: portrait) {
-
-    .hangman img {
-        min-height: 332px;
-        width: 80vw;
-    }
-
-    .char {
-        width: calc((100vw - 2rem) / 11.5 - 7px);
-        height: calc((100vw - 2rem) / 7 - 7px);
-    }
-}
-
-@media (min-width: 768px) {
-    .category {
-        font-size: 1rem;
-    }
-    
-    .board {
-        font-size: 2rem;
-    }
-
-    .hangman img {
-        min-height: 460px;
-        width: 60vw;
-    }
-
-    .alphabet {
-        margin: 0 1rem;
-        gap: 10px;
-    }
-
-    .char {
-        width: calc((100vw - 2rem) / 7 - 10px);
-        height: calc((100vw - 2rem) / 15);
-    }
-}
-
-@media (min-width: 820px) {
-    .hangman img {
-        min-height: 656px;
-        width: 80vw;
-    }
-}
-
 @media (min-width: 1024px) {
     .wrapper {
-        height: 90vh;
-        padding: 15vh 0;
-        align-content: space-around;
-        row-gap: 2rem;
-    }
-    .hangman {
-        flex-basis: 50%;
+        align-items: center;
     }
 
-    .hangman img {
-        min-height: 460px;
+    .info-container {
+        left: 3rem;
+        position: relative;
+        top: 3rem;
+    }
+
+    .board {
+        font-size: 2.5rem;
+    }
+
+    .hangman {
+        flex-basis: 40%;
+    }
+
+    .hangman img{
         width: 100%;
     }
 
     .alphabet {
-        margin: 2rem auto;
-        flex-basis: calc(50% - 2rem);
+        flex-basis: 50%;
+        gap: 1.2rem;
+        max-height: 600px;
+        padding: 0 2rem 0 0;   
     }
 
     .char {
-        width: calc((50vw - 2rem) / 7 - 10px);
-        height: calc((50vw - 2rem) / 7 - 10px);
-    }
-    
-}
-
-@media (min-width: 1155px) {
-    .category {
-        margin-top: 2rem;
+        font-size: 2rem;
+        height: calc((30vw - 2rem) / 5 - 7px);
+        width: calc((30vw - 2rem) / 5 - 7px);
     }
 
-    .alphabet {
-        margin: 4rem auto;
-        flex-basis: calc(50% - 2rem);
-    }
-}
-
-@media (min-width: 1440px) {
-    body {
-        font-size: 3rem;
+    .char:hover { 
+        background-color: #ececec;
+        border-color: #606060;
+        box-shadow: 0 3px 0 #606060;
+        color: #606060;
     }
 
-    .wrapper {
-        row-gap: 0;
-        max-height: 100%;
-    }
-
-    .board {
-        font-size: 3.5rem;
-    }
-
-    .hangman img {
-        min-height: 615px;
-        min-width: 615px;
-        width: 60%;
-    }
-
-    .alphabet {
-        max-height: 60%;
-        flex-basis: calc(50% - 4rem);
-        margin-right: 4rem;
-    }
-
-    .char {
-        width: calc((40vw - 2rem) / 7);
-        height: calc((40vw - 2rem) / 7);
-    }
-
-    
-}
-
-.char:hover {
-    background-color: #ececec;
-    border-color: #606060;
-    box-shadow: 0 3px 0 #606060;
-    color: #606060;
+    .reset {
+        width: 50%;
+    }   
 }
 
